@@ -1,20 +1,96 @@
-<link rel="stylesheet" href="tptpstil.css">
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savjeti za Brucoše</title>
+    <link rel="stylesheet" href="tptpstil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
 
-<div class="header">
-    <div style="color:blue" class="left">
-	<img src="C:/Users/Servis/Desktop/Grupa19_TPTP_projekat/images/fet.png" width="50" height="50">Fakultet elektrotehnike u Tuzli</img>
-</div>
+    <header>
+        <div class="header-content">
+            <div class="logo-title">
+                <img src="images/fet_logo.png", height="100px">
+                <h1 id="institution-title">Fakultet Elektrotehnike Univerzitet u Tuzli</h1>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/FETuzla/?locale=hr_HR" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/fetuzla/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/eestec-lc-tuzla/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="start.html">Početna</a></li>
+                <li><a href="odsjeki.html">Odsjeci</a></li>
+                <li><a href="savjeti.html">Savjeti</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="center">
-        <ul class="menu">
-            <li><a href="start.html">Početna</a></li>
-            <li><a href="odsjeki.html">Odsjeci</a></li>
-            <li><a href="savjeti.html">Savjeti</a></li>
-          </ul>
+    <div class="container">
+        <main class="main-content">
+            <section class="tips">
+                <h2>Korisni savjeti za buduće brucoše</h2>
+                <div class="tip">
+                    <h3>Kako se pripremiti za prijemni</h3>
+                    <p>Savjeti za pripremu za prijemni ispit...</p>
+                </div>
+                <div class="tip">
+                    <h3>Kako izabrati odsjek</h3>
+                    <p>Smjernice za odabir odgovarajućeg odsjeka...</p>
+                </div>
+                <div class="tip">
+                    <h3>Studentski život</h3>
+                    <p>Informacije o studentskom životu u Tuzli...</p>
+                </div>
+                 <div class="tip">
+                    <h3>Mogućnosti stipendija</h3>
+                    <p>Detalji o dostupnim stipendijama za studente...</p>
+                </div>
+                 <div class="tip">
+                    <h3>Preporuke starijih studenata</h3>
+                    <p>Iskustva i savjeti starijih studenata...</p>
+                </div>
+                </section>
+
+            <section class="contact-form">
+                <h2>Kontaktirajte nas</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ime:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon:</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Poruka:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Pošalji</button>
+                    <p id="validation-message" class="error-message"></p>
+                </form>
+            </section>
+        </main>
     </div>
 
-    <div class="right">  <a href="https://www.facebook.com/FETuzla" target = "_blank"><img src="C:/Users/Servis/Desktop/Grupa19_TPTP_projekat/images/facebook.png" width="50" height="50"></img></a>
-	<a href="https://www.instagram.com/fetuzla/" target = "_blank"><img src="C:/Users/Servis/Desktop/Grupa19_TPTP_projekat/images/insta.jpg" width="50" height="50"></img></a>
-	<a href="https://ba.linkedin.com/company/university-of-tuzla" target = "_blank"><img src="C:/Users/Servis/Desktop/Grupa19_TPTP_projekat/images/linkedin.jpg" width="50" height="50"></img></a>
-	</div>
-</div>
+    <footer>
+        <p>Dizajnirali: Emir Halilović, Sadin Halilović, Emir Halilčević, 2025. godina</p>
+    </footer>
+    
+    <a href="#" id="scroll-to-top" title="Povratak na početak">
+        <img src="images/icons/arrow-up.png" alt="scroll-to-top" width="70">
+    </a>
+
+    <script src="tptpobrazac.js"></script>
+
+</body>
+</html>
