@@ -114,6 +114,10 @@ nav a:hover {
     border-bottom: 1px solid #737373;
 }
 
+.news-item p {
+    text-align: justify;
+}
+
 .news-item img {
     width: 50%;
     height: auto;
@@ -125,6 +129,18 @@ nav a:hover {
 
 .institutions .institution {
     margin-bottom: 1em;
+}
+
+.institution p {
+    text-align: left;
+}
+
+.institution a {
+    text-decoration: none;
+}
+
+.institution a:hover {
+    text-decoration: underline;
 }
 
 .youtube-video iframe {
@@ -258,6 +274,14 @@ nav a:hover {
         width: 100%;
     }
 
+    .institutions .institution {
+        margin-right: 2em;
+    }
+
+    .youtube-video {
+        margin-right: 2em;
+    }
+
     nav ul {
         flex-direction: column;
         text-align: center;
@@ -280,6 +304,10 @@ nav a:hover {
     #scroll-to-top img {
         width: 42px;
         height: 42px;
+    }
+
+    .news-item {
+        margin-right: 2em;
     }
 
     .news-item img {
