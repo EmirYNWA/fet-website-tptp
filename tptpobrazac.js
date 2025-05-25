@@ -1,17 +1,29 @@
-// document.getElementById('contactForm').addEventListener('submit', function(event)) {
-//     event.preventDefault(); // Spriječi defaultno slanje forme
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        console.log('Klikno Submit');
+        e.preventDefault();
+        console.log("Forma je pokušana poslati");
 
-//     let name = document.getElementById('name').value.trim();
-//     let phone = document.getElementById('phone').value.trim();
-//     let email = document.getElementById('email').value.trim();
-//     let message = document.getElementById('message').value.trim();
-//     let validationMessage = document.getElementById('validation-message');
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const validationMessage = document.getElementById("validation-message");
 
-//     if (name === '' || phone === '' || email === '' || message === '') {
-//         validationMessage.textContent = "Niste ispravno popunili sva polja.";
-//         return;
-//     }
-// }
+        if (name === "" || phone === "" || email === "" || message === "") {
+            const inputs = document.querySelectorAll(".contact-form input");
+
+            inputs.forEach(input => {
+                input.style.outline = "0.25px solid red";
+            });
+            validationMessage.textContent = "Niste ispravno popunili sva polja";
+            return;
+        }
+
+        validationMessage.textContent = ""; 
+        this.submit();
+    });
+});
 
 const scrollToTopLink = document.getElementById("scroll-to-top");
 

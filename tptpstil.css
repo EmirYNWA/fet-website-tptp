@@ -1,3 +1,9 @@
+/*CSS varijable da bi se izbjegla ponavljanja*/
+:root {
+    --hf_bgcolor: #065bb0a0; /* boja pozadine za header i footer */
+    --content-border-radius: 20px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -7,10 +13,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    background-image: url('https://tuzlanski.ba/wp-content/uploads/2023/11/elektrotehnika-tuzla-neuslovna-zgrada-5.jpg'); /* Postavi sliku kao pozadinu */
-    background-size: cover;
+    background-image: url('images/fet.jpg'); /* Postavi sliku kao pozadinu */
+    background-size: contain;
+    background-repeat: round;
     background-blend-mode: multiply; /* Da se vidi i slika i boja  */
-    background-color: rgba(255, 255, 255, 0.8); /* Polu-transparentna bijela pozadina */
+    background-color: rgba(0, 0, 0, 0.75); /* Polu-transparentna bijela pozadina */
 }
 
 #institution-title {
@@ -30,14 +37,25 @@ body {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    border-radius: var(--content-border-radius);
 }
 
 header, footer {
     /* background-color: #003366; */
-    background-color: #065bb0;
+    background-color: var(--hf_bgcolor);
     color: white;
     text-align: center;
     padding: 1em 0;
+}
+
+header {
+    border-bottom-left-radius: var(--content-border-radius);
+    border-bottom-right-radius: var(--content-border-radius);
+}
+
+footer {
+    border-top-left-radius: var(--content-border-radius);
+    border-top-right-radius: var(--content-border-radius);
 }
 
 nav ul {
@@ -57,6 +75,7 @@ nav a {
     text-decoration: none;
     padding: 0.5em 1em;
     display: block;
+    border-radius: 20px;
 }
 
 nav a:hover {
@@ -81,6 +100,24 @@ nav a:hover {
     width: 60%;
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 0;
+    margin: 1em 0;
+}
+
+.main-alt {
+    border-radius: var(--content-border-radius);
+}
+
+.left-sidebar {
+    margin: 1em 0;
+    border-top-left-radius: var(--content-border-radius);
+    border-bottom-left-radius: var(--content-border-radius);
+}
+
+.right-sidebar {
+    margin: 1em 0;
+    border-top-right-radius: var(--content-border-radius);
+    border-bottom-right-radius: var(--content-border-radius);
 }
 
 .group-members .member {
@@ -156,6 +193,7 @@ nav a:hover {
 }
 
 /* Stilovi za savjete i kontakt formu  */
+
 .tips .tip {
     margin-bottom: 1em;
     padding: 1em;
@@ -184,6 +222,84 @@ nav a:hover {
     border: 1px solid #ccc;
 }
 
+.custom-form-field {
+  position: relative;
+  border-top: 20px solid transparent;
+  margin-bottom: 5px;
+  display: inline-block;
+  --field-padding: 12px;
+}
+
+.custom-form-field input, textarea {
+    border: none;
+    appearance: none;
+    background: #ccc;
+    padding: 12px;
+    border-radius: 10px;
+    width: 90%;
+    outline: none;
+}
+
+.custom-form-field textarea {
+    max-width: 90%;
+}
+
+.custom-form-field .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #727272;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-form-field input.dirty + .placeholder,
+.custom-form-field input:focus + .placeholder,
+.custom-form-field input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 12px;
+  color: #222;
+}
+
+.custom-form-field textarea.dirty + .placeholder,
+.custom-form-field textarea:focus + .placeholder,
+.custom-form-field textarea:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 12px;
+  color: #222;
+}
+
+.custom-form-field input, textarea {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background:
+    linear-gradient(90deg, #222, #222) center bottom/0 0.15em no-repeat,
+    linear-gradient(90deg, #bababa, #bababa) left bottom/100% 0.15em no-repeat,
+    linear-gradient(90deg, #d2d2d2, #bababa) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.custom-form-field input.dirty,
+.custom-form-field input:not(:placeholder-shown),
+.custom-form-field input:focus {
+  background-size: 100% 0.15em, 100% 0.1em, 100%;
+}
+
+.custom-form-field textarea.dirty,
+.custom-form-field textarea:not(:placeholder-shown),
+.custom-form-field textarea:focus {
+  background-size: 100% 0.15em, 100% 0.1em, 100%;
+}
+
 .contact-form button {
     background-color: #003366;
     color: white;
@@ -198,6 +314,8 @@ nav a:hover {
 
 .error-message {
     color: red;
+    font-size: 20px;
+    display: block;
 }
 
 .header-content {
@@ -272,6 +390,7 @@ nav a:hover {
 
     .left-sidebar, .right-sidebar, .main-content {
         width: 100%;
+        border-radius: var(--content-border-radius);
     }
 
     .institutions .institution {
