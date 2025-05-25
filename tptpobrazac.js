@@ -1,3 +1,6 @@
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^\+?\d+$/;
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("contact-form").addEventListener("submit", function(e) {
         console.log('Klikno Submit');
@@ -11,12 +14,26 @@ document.addEventListener("DOMContentLoaded", function() {
         const validationMessage = document.getElementById("validation-message");
 
         if (name === "" || phone === "" || email === "" || message === "") {
-            const inputs = document.querySelectorAll(".contact-form input");
+            const inputs = document.querySelectorAll(".contact-form input, textarea");
 
             inputs.forEach(input => {
                 input.style.outline = "0.25px solid red";
             });
-            validationMessage.textContent = "Niste ispravno popunili sva polja";
+            validationMessage.textContent = "Sva polja moraju biti popunjena";
+            return;
+        }
+        else if (!phoneRegex.test(phone)) {
+            document.querySelectorAll(".contact-form #phone").forEach(input => {
+                input.style.outline = "0.25px solid red";
+            });
+            validationMessage.textContent = "Broj telefona nije validan";
+            return;
+        }
+        else if (!emailRegex.test(email)) {
+            document.querySelectorAll(".contact-form #email").forEach(input => {
+                input.style.outline = "0.25px solid red";
+            });
+            validationMessage.textContent = "E-Mail adresa nije validna";
             return;
         }
 

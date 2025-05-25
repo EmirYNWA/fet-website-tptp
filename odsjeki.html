@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="bs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,22 @@
     <link rel="stylesheet" href="tptpstil.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
+
 <body>
 
     <header>
         <div class="header-content">
             <div class="logo-title">
-                <img src="images/fet_logo.png", height="100px">
+                <img src="images/fet_logo.png" , height="100px">
                 <h1 id="institution-title">Fakultet Elektrotehnike Univerzitet u Tuzli</h1>
             </div>
             <div class="social-links">
-                <a href="https://www.facebook.com/FETuzla/?locale=hr_HR" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/fetuzla/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-                <a href="https://www.linkedin.com/company/university-of-tuzla/?originalSubdomain=ba" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/FETuzla/?locale=hr_HR" target="_blank"><img src="images/facebook.png"
+                        alt="Facebook"></a>
+                <a href="https://www.instagram.com/fetuzla/" target="_blank"><img src="images/instagram.png"
+                        alt="Instagram"></a>
+                <a href="https://www.linkedin.com/company/university-of-tuzla/?originalSubdomain=ba"
+                    target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
             </div>
         </div>
         <nav>
@@ -30,19 +35,54 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container departments">
         <main class="main-content main-alt">
-            <section class="departments">
-                <h2>Naši Odsjeci</h2>
-                <div class="department">
-                    <h3>Odsjek za Računarstvo i Informatiku</h3>
-                    <p>Informacije o Odsjeku za Računarstvo i Informatiku...</p>
+            <h2>Naši Odsjeci</h2>
+            <!-- First department acts like main-btn toggling its bar list -->
+            <div class="department toggler" onclick="toggleSection('bars-content')">
+                <h3>Odsjek za Računarstvo i Informatiku</h3>
+            </div>
+            <div id="bars-content" class="content-section" style="display:none;">
+                <div class="bar-container">
+                    <div class="bar" onclick="toggleBar(this)"><span>AR</span><span class="arrow">v</span></div>
+                    <div class="bar-content">
+                        <p>Text za AR</p>
+                    </div>
+                    <div class="bar" onclick="toggleBar(this)"><span>RI</span><span class="arrow">v</span></div>
+                    <div class="bar-content">
+                        <p>Text za RI</p>
+                    </div>
+                    <div class="bar" onclick="toggleBar(this)"><span>TK</span><span class="arrow">v</span></div>
+                    <div class="bar-content">
+                        <p>Text za TK</p>
+                    </div>
+                    <div class="bar" onclick="toggleBar(this)"><span>ESKE</span><span class="arrow">v</span></div>
+                    <div class="bar-content">
+                        <p>Text za ESKE</p>
+                    </div>
+                    <div class="bar" onclick="toggleBar(this)"><span>EEMS</span><span class="arrow">v</span></div>
+                    <div class="bar-content">
+                        <p>Text za EEMS</p>
+                    </div>
                 </div>
-                <div class="department">
-                    <h3>Odsjek za Elektroenergetiku</h3>
-                    <p>Informacije o Odsjeku za Elektroenergetiku...</p>
+            </div>
+
+            <!-- Second department toggles its own content -->
+            <div class="department toggler" onclick="toggleSection('other-content')">
+                <h3>Odsjek za Elektroenergetiku</h3>
+            </div>
+            <div id="other-content" class="content-section" style="display:none;">
+                <div class="other-section">
+                    <p>Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                        Detaljne informacije o Odsjeku za Elektroenergetiku...
+                    </p>
                 </div>
-                </section>
+            </div>
         </main>
     </div>
 
@@ -54,7 +94,28 @@
         <img src="images/icons/arrow-up.png" alt="scroll-to-top" width="70">
     </a>
 
+    <script>
+        // Toggle entire section visibility
+        function toggleSection(id) {
+            const el = document.getElementById(id);
+            el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+        }
+
+        // Toggle individual bar expansion
+        function toggleBar(el) {
+            el.classList.toggle('active');
+        }
+
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scroll-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) scrollBtn.style.display = 'block';
+            else scrollBtn.style.display = 'none';
+        });
+        scrollBtn.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    </script>
     <script src="tptpobrazac.js"></script>
 
 </body>
+
 </html>
