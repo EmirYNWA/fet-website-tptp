@@ -19,26 +19,28 @@ document.addEventListener("DOMContentLoaded", function() {
             inputs.forEach(input => {
                 input.style.outline = "0.25px solid red";
             });
-            validationMessage.textContent = "Sva polja moraju biti popunjena";
+            validationMessage.textContent = "Niste ispravno popunili sva polja.";
             return;
         }
         else if (!phoneRegex.test(phone)) {
             document.querySelectorAll(".contact-form #phone").forEach(input => {
                 input.style.outline = "0.25px solid red";
             });
-            validationMessage.textContent = "Broj telefona nije validan";
+            validationMessage.textContent = "Broj telefona nije validan.";
             return;
         }
         else if (!emailRegex.test(email)) {
             document.querySelectorAll(".contact-form #email").forEach(input => {
                 input.style.outline = "0.25px solid red";
             });
-            validationMessage.textContent = "E-Mail adresa nije validna";
+            validationMessage.textContent = "E-Mail adresa nije validna.";
             return;
         }
 
         validationMessage.textContent = ""; 
         this.submit();
+        
+        alert("Uspješno ste poslali poruku")
     });
 });
 
