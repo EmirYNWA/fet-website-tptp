@@ -15,19 +15,22 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     background-image: url('images/fet.jpg');
-    /* Postavi sliku kao pozadinu */
-    background-size: contain;
-    background-repeat: round;
     background-blend-mode: multiply;
     /* Da se vidi i slika i boja  */
     background-color: rgba(0, 0, 0, 0.75);
-    /* Polu-transparentna bijela pozadina */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-#institution-title {
+.institution-title {
     margin-left: 5%;
     font-size: 22px;
     display: inline;
+    text-align: left;
 }
 
 .logo-title {
@@ -46,7 +49,6 @@ body {
 
 header,
 footer {
-    /* background-color: #003366; */
     background-color: var(--hf_bgcolor);
     color: white;
     text-align: center;
@@ -61,6 +63,10 @@ header {
 footer {
     border-top-left-radius: var(--content-border-radius);
     border-top-right-radius: var(--content-border-radius);
+}
+
+nav {
+    margin-top: -20px;
 }
 
 nav ul {
@@ -162,7 +168,7 @@ nav a:hover {
 }
 
 .news-item img {
-    width: 50%;
+    width: 60%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -176,10 +182,18 @@ nav a:hover {
 
 .institution p {
     text-align: left;
+    font-size: 0.8em;
+}
+
+.institution ul {
+    font-size: 0.8em;
+    margin-left: -1.5em;
+    list-style-type: square;
 }
 
 .institution a {
     text-decoration: none;
+    font-size: 0.9em;
 }
 
 .institution a:hover {
@@ -200,11 +214,46 @@ nav a:hover {
 
 /* Stilovi za savjete i kontakt formu  */
 
+.tip p {
+    text-align: justify;
+}
+
+.tip ul {
+    text-align: justify;
+}
+
 .tips .tip {
     margin-bottom: 1em;
     padding: 1em;
     background-color: #f9f9f9;
     border-left: 5px solid #003366;
+}
+
+.tips h2 {
+    text-align: center;
+}
+
+.tip #exercises {
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    background-color: #d5d5d5;
+    padding: 5px;
+    margin: 20px 0;
+}
+
+.tip #exercises:hover {
+    transition: 0.2s;
+    background-color: #aaaaaa;
+}
+
+.tip-link {
+    text-decoration: none;
+}
+
+.tip-link:hover {
+    transition-duration: 0.2s;
+    color: darkblue;
 }
 
 .contact-form {
@@ -326,9 +375,11 @@ textarea {
 }
 
 .error-message {
+    font-weight: 800;
     color: red;
-    font-size: 20px;
+    font-size: 16px;
     display: block;
+    text-align: left;
 }
 
 .header-content {
@@ -344,7 +395,6 @@ textarea {
 
 .social-links img {
     height: 42px;
-    /*TODO: prilagoditi*/
 }
 
 .social-links img:hover {
@@ -417,6 +467,10 @@ textarea {
         margin-right: 2em;
     }
 
+    nav {
+        margin-top: 0;
+    }
+
     nav ul {
         flex-direction: column;
         text-align: center;
@@ -448,11 +502,28 @@ textarea {
     .news-item img {
         width: 100%;
     }
+
+    .tips h2 {
+        margin-right: 2em;
+    }
+
+    .tip {
+        margin-right: 2em;
+    }
+    
+    .contact-form {
+        margin-right: 2em;
+    }
+
+    footer p {
+        font-size: 12px;
+        margin: auto 40px;
+    }
 }
 
+/* Stilovi za odsjeke  */
 .container.departments {
     width: 80%;
-    /* margin: auto; */
     margin: 1em auto;
     background-color: rgba(255, 255, 255, 0.65);
     padding: 2em;
@@ -476,6 +547,7 @@ textarea {
 
 .department.toggler:hover {
     background-color: #3a5a8a;
+    color : rgb(228, 219, 219);
 }
 
 .content-section {
@@ -483,7 +555,6 @@ textarea {
     margin-bottom: 1em;
 }
 
-/* Accordion Bars */
 .bar-container {
     width: 100%;
     max-width: 1000px;
@@ -525,10 +596,12 @@ textarea {
 .bar-content p {
     padding: 15px;
     margin: 0;
+    text-align: justify;
 }
 
 .bar.active+.bar-content {
     max-height: 200px;
+    overflow-y: auto;
 }
 
 .bar.active .arrow {
@@ -540,15 +613,16 @@ textarea {
 }
 
 #other-content {
-  display: none; /* stays hidden until toggled by JS */
+    display: none;
+    /* ne prikazuje se prije promjene u JavaScriptu */
 }
 
 #other-content .other-section {
-  background-color: white;
-  color: #333;
-  padding: 1.5em;
-  margin: 1em auto;
-  border-radius: 5px;
-  max-width: 800px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+    color: #333;
+    padding: 1.5em;
+    margin: 1em auto;
+    border-radius: 5px;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
